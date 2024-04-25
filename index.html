@@ -5,305 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Curriculum Douglas</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 5%;
-      background-color: #0ac0ee;
-    }
-    header {
-      background-color: rgb(255 255 255 / 42%);
-      border-radius: 5px;
-      margin: 50px;
-      padding: 5px;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-    p {
-      margin: 5px 0;
-      font-size: 18px;
-    }
-    .section-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    section {
-      background-color: rgba(255, 255, 255, 0.42); /* Color blanco semi-transparente */
-      margin: 5px;
-      padding: 50px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      width: calc(100% - 40px); /* Ajustar el ancho */
-      max-width: 400px; /* Ancho máximo */
-      cursor: pointer; /* Cambiar el cursor al pasar sobre las secciones */
-      transition: transform 0.5s; /* Agregar transición al hacer clic */
-    }
-    section:hover {
-      background-color: rgba(255, 255, 255, 0.9); /* Color blanco más claro */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    }
-    h2 {
-      color: #333;
-      font-size: 24px;
-      margin-top: 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .profile-picture {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-    }
-
-    .profile-picture img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .interests li,
-    .hobbies li {
-      list-style: none; /* Eliminar viñetas */
-      margin-bottom: 20px;
-      display: flex; /* Alineación de los elementos en línea */
-      align-items: center; /* Alineación vertical */
-    }
-    .interests img,
-    .hobbies img {
-      width: 30px; /* Tamaño de las imágenes */
-      height: 30px;
-      margin-right: 10px; /* Espacio entre la imagen y el texto */
-      border-radius: 50%; /* Borde redondeado */
-    }
-
-    /* Clase para la sección expandida */
-    .expanded-section {
-        background-color:#ffffff;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        width: 100%; /* Ancho de la sección expandida */
-        max-height: 80%; /* Altura máxima de la sección expandida */
-        overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido es demasiado largo */
-        }
-
-    @media only screen and (min-width: 768px) {
-      section {
-        width: calc(50% - 40px); /* Ajustar el ancho para pantallas medianas */
-      }
-    }
-
-    @media only screen and (min-width: 992px) {
-      section {
-        width: calc(33.33% - 40px); /* Ajustar el ancho para pantallas grandes */
-      }
-        }
-        .section-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    }
-
-    .section-buttons button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.42);
-  color: #000000;
-  font-size: 16px;
-  font-weight: bold; /* Aplicar negrita */
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-
-    .section-buttons button:hover {
-    background-color: #555;
-    font-weight:100;
-    }
-    /* Estilos para pantallas pequeñas (modo teléfono) */
-@media screen and (max-width: 600px) {
-  .section-buttons {
-    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
-    align-items: center; /* Centrar los elementos horizontalmente */
-  }
-
-  .section-buttons button {
-    margin: 5px 0; /* Espacio entre los botones */
-    width: 100%; /* Ancho completo */
-  }
-}
-
-
-
-#contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#contact-form label,
-#contact-form input,
-#contact-form textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-#contact-form button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#contact-form button:hover {
-  background-color: #555;
-}
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="profile-picture">
-        <img src="https://media.licdn.com/dms/image/D4E03AQHOtwsFv2xJ9Q/profile-displayphoto-shrink_400_400/0/1714054279421?e=1719446400&v=beta&t=zbkTfiHwoO1oJJZEtP9kIz7QWTvOCxc3j9Lgz-3iLts" alt="Foto de perfil">
-      </div>
-    <h1>Douglas Alfonzo Genesis Fernandez Mendez</h1>
+      <img src="https://media.licdn.com/dms/image/D4E03AQHOtwsFv2xJ9Q/profile-displayphoto-shrink_400_400/0/1714054279421?e=1719446400&v=beta&t=zbkTfiHwoO1oJJZEtP9kIz7QWTvOCxc3j9Lgz-3iLts" alt="Foto de perfil">
+    </div>
+    <h1> Douglas Alfonzo Genesis Fernandez Mendez</h1>
     <p>Tecnico en Sistemas</p>
   </header>
-  <p></p>
+  
   <div class="section-buttons">
     <button onclick="expandSection('expLaboral')">Experiencia Laboral</button>
     <button onclick="expandSection('habilidades')">Habilidades</button>
     <button onclick="expandSection('educacion')">Educación</button>
-    <button onclick="expandSection('contacto')">Contacto</button>
+    <button onclick="scrollToContact()">Contacto</button>
     <button onclick="expandSection('intereses')">Intereses</button>
     <button onclick="expandSection('hobbies')">Hobbies</button>
   </div>
   
-  
   <div class="section-container">
     <section id="expLaboral" onclick="expandSection('expLaboral')">
-      <h2>Experiencia Laboral</h2>
-      <ul>
-        <li>Operador de Sistemas</li>
-        <li>Montaje e Instalación de Redes de Cámaras Web</li>
-        <li>Mantenimiento de Redes e Impresoras</li>
-        <li>Asistente de Topografía</li>
-        <li>Obrero - Etiquetado y Organización de Almacenes</li>
-        <li>Domiciliario en Restaurante</li>
-        <li>Chofer de Empresas</li>
-        <li>Handy Man</li>
-        
-      </ul>
+        <h2>Experiencia Laboral</h2>
+            <ul>
+              <li>Operador de Sistemas</li>
+              <li>Obrero - Etiquetado y Organización de Almacenes</li>
+              <li>Domiciliario en Restaurante</li>
+              <li>Asistente de Topografía</li>
+              <li>Chofer de Empresa</li>
+              <li>Handy Man</li>
+              <li>Montaje e Instalación de Redes de Cámaras Web</li>
+              <li>Mantenimiento de Redes e Impresoras</li>
+            </ul>
     </section>
-
     <section id="habilidades" onclick="expandSection('habilidades')">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Servicio al Cliente</li>
-        <li>Resolución de Problemas</li>
-        <li>Comunicación Efectiva</li>
-        <li>Trabajo en Equipo</li>
-        <li>Gestión del Tiempo</li>
-      </ul>
-    </section>
-
-    <section id="educacion" onclick="expandSection('educacion')">
-      <h2>Educación</h2>
-      <p>U.N.E.R.G - Ingeniería de Sistemas - 6to semestre cursado</p>
-      <p>U. E. N. Liceo Alberto Smith - Bachiller</p>
-    </section>
-
-    <section>
-        <h2>Cursos </h2>
-        <li>Herramientas Informáticas y Digitales</li> 
-       <li>Fundamentos de redes y Datos</li>
-    </section>
-    
-
-    
-    <section id="intereses" onclick="expandSection('intereses')">
-      <h2>Intereses</h2>
-      <ul class="interests">
-        <li><i class="fa-solid fa-plane-up">  Viajar</i></li>
-        <li><i class="fa-solid fa-book">      Leer</i></li>
-        <li><i class="fa-solid fa-graduation-cap">Aprender</i></li>
-        
-      </ul>
-    </section>
-
-    <section id="hobbies" onclick="expandSection('hobbies')">
-      <h2>Hobbies</h2>
-      <ul class="hobbies">
-          <li><i class="fa-solid fa-gamepad"> Gamer</i></li>
-          <li><i class="fa-solid fa-photo-film">  Fotografia y Videos</i></li>
-          <li><i class="fa-solid fa-kitchen-set">       Cocinar</i></li>
-      </ul>
-    </section>
-    
-    <section id="contacto">
-      <h2>Contacto</h2>
-    <ul class="hobbies">
-        <li><i class="fa-solid fa-envelope"> Correo: <a href="douglasfernandez2025@gmail.com">douglasfernandez2025@gmail.com</a></i></li>
-        <li><i class="fa-solid fa-phone">Telefono: <a href=tel:"+16126016678">+1 6126016678</a></i></li>
-        <li><i class="fa-brands fa-linkedin">Linkedin:   <a href="https://linkedin.com/in/douglas-alfonzo-fernandez-mendez-876bb7305">Douglas Fernandez</a></i></li>
-    </ul>
-    </section>
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form id="contact-form" action="enviar_correo.php" method="POST">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          <label for="email">Correo Electronico:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-          <button type="submit">Enviar</button>
-        </form>
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Servicio al Cliente</li>
+          <li>Resolución de Problemas</li>
+          <li>Comunicación Efectiva</li>
+          <li>Trabajo en Equipo</li>
+          <li>Gestión del Tiempo</li>
+        </ul>
       </section>
+  
+      <section id="educacion" onclick="expandSection('educacion')">
+        <h2>Educación</h2>
+        <p>U.N.E.R.G - Ingeniería de Sistemas - 6to semestre cursado</p>
+        <p>U. E. N. Liceo Alberto Smith - Bachiller</p>
+      </section>
+  
+      <section>
+          <h2>Cursos </h2>
+          <li>Herramientas Informáticas y Digitales</li> 
+         <li>Fundamentos de redes y Datos</li>
+      </section>
+      
+  
+      
+      <section id="intereses" onclick="expandSection('intereses')">
+        <h2>Intereses</h2>
+        <ul class="interests">
+          <li><i class="fa-solid fa-plane-up">  Viajar</i></li>
+          <li><i class="fa-solid fa-book">      Leer</i></li>
+          <li><i class="fa-solid fa-graduation-cap">Aprender</i></li>
+          
+        </ul>
+      </section>
+  
+      <section id="hobbies" onclick="expandSection('hobbies')">
+        <h2>Hobbies</h2>
+        <ul class="hobbies">
+            <li><i class="fa-solid fa-gamepad"> Gamer</i></li>
+            <li><i class="fa-solid fa-photo-film">  Fotografia y Videos</i></li>
+            <li><i class="fa-solid fa-kitchen-set">       Cocinar</i></li>
+        </ul>
+      </section>
+      
+      <section id="contacto">
+        <h2>Contacto</h2>
+      <ul class="hobbies">
+          <li><i class="fa-solid fa-envelope"> Correo: <a href="mailto:douglasfernandez2025@gmail.com">douglasfernandez2025@gmail.com</a></i></li>
+          <li><i class="fa-solid fa-phone">Telefono: <a href=tel:"+16126016678">+1 6126016678</a></i></li>
+          <li><i class="fa-brands fa-linkedin">Linkedin:   <a href="https://linkedin.com/in/douglas-alfonzo-fernandez-mendez-876bb7305">Douglas Fernandez</a></i></li>
+      </ul>
+      </section>
+      <section id="contacto">
+          <h2>Contacto</h2>
+          <form id="contact-form" action="enviar_correo.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+    <!-- Secciones para Habilidades, Educación, Cursos, Intereses, Hobbies, Contacto -->
   </div>
 
-  <script>
-    function expandSection(sectionId) {
-      var section = document.getElementById(sectionId);
-      var expandedSections = document.querySelectorAll('.expanded-section');
-  
-      // Cerrar cualquier sección expandida
-      expandedSections.forEach(function(expandedSection) {
-        if (expandedSection.id !== sectionId) {
-          expandedSection.classList.remove('expanded-section');
-        }
-      });
-  
-      // Abrir o cerrar la sección según su estado actual
-      section.classList.toggle('expanded-section');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
