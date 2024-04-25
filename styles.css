@@ -125,7 +125,7 @@ margin-bottom: 20px;
 .section-buttons button {
 margin: 0 10px;
 padding: 10px 20px;
-border: none;
+border:#000000;
 border-radius: 5px;
 border-color: #000000;
 background-color: rgba(255, 255, 255, 0.42);
